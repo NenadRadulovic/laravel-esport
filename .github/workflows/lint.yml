@@ -1,4 +1,4 @@
-name: master
+name: Lint
 
 on: [push, pull_request]
 
