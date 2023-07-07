@@ -2,16 +2,16 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Tournament;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
 class TournamentFactory extends Factory
 {
-
     protected $model = Tournament::class;
+
     /**
      * Define the model's default state.
      *
@@ -30,7 +30,7 @@ class TournamentFactory extends Factory
     {
         return $this->state(function ($attributes) {
             return [
-                'venue_id' => VenueFactory::new()->create($attributes)
+                'venue_id' => VenueFactory::new()->create($attributes),
             ];
         });
     }

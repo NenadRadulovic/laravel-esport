@@ -3,8 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Employee;
-use App\Models\Role;
-use App\Models\Team;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -13,8 +11,8 @@ use Illuminate\Support\Str;
  */
 class EmployeeFactory extends Factory
 {
-
     protected $model = Employee::class;
+
     /**
      * Define the model's default state.
      *
@@ -28,16 +26,17 @@ class EmployeeFactory extends Factory
             'last_name' => fake()->lastName(),
             'contact_email' => fake()->email(),
             'role_id' => RoleFactory::new()->create(),
-            'team_id' => TeamFactory::new()->create()
+            'team_id' => TeamFactory::new()->create(),
         ];
     }
+
     public function withRole($role)
     {
         return $this->state(function ($attributes) use ($role) {
             return [
                 'role_id' => RoleFactory::new()->create([
-                    'name' => $role
-                ])
+                    'name' => $role,
+                ]),
             ];
         });
     }

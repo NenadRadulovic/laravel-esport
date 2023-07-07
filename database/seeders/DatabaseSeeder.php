@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             OrganizationSeeder::class,
             RoleSeeder::class,
             TeamSeeder::class,
-            EmployeeSeeder::class
+            EmployeeSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

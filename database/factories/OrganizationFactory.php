@@ -2,16 +2,16 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Organization;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
 class OrganizationFactory extends Factory
 {
-
     protected $model = Organization::class;
+
     /**
      * Define the model's default state.
      *
@@ -23,7 +23,7 @@ class OrganizationFactory extends Factory
             'name' => fake()->company(),
             'description' => fake()->text(),
             'founded_date' => now(),
-            'logo' => fake()->image('public', 640, 480, null, false),
+            'logo' => public_path('testImage.png'),
         ];
     }
 }

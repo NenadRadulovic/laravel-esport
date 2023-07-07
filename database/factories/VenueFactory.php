@@ -4,15 +4,14 @@ namespace Database\Factories;
 
 use App\Models\Venue;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Venue>
  */
 class VenueFactory extends Factory
 {
-
     protected $model = Venue::class;
+
     /**
      * Define the model's default state.
      *

@@ -24,7 +24,7 @@ class VenueRequest extends FormRequest
         return [
             'name' => 'string',
             'capacity' => 'integer',
-            'location' => 'string'
+            'location' => 'string',
         ];
     }
 }

@@ -9,20 +9,20 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Team extends Model
 {
-  use HasTimestamps, HasFactory;
+    use HasTimestamps, HasFactory;
 
-  protected $fillable = [
-    'id',
-    'name',
-  ];
+    protected $fillable = [
+      'id',
+      'name',
+    ];
 
-  public function teamMembers(): HasMany
-  {
-    return $this->hasMany(Employee::class);
-  }
+    public function teamMembers(): HasMany
+    {
+        return $this->hasMany(Employee::class);
+    }
 
-  public function tournaments()
-  {
-    return $this->belongsToMany(Tournament::class, 'tournament_teams');
-  }
+    public function tournaments()
+    {
+        return $this->belongsToMany(Tournament::class, 'tournament_teams');
+    }
 }

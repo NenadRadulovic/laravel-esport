@@ -39,8 +39,8 @@ class VenueApiTest extends TestCase
     {
         $venue = VenueFactory::new()->create();
         $response = $this->put("/api/venue/$venue->id", [
-            "capacity" => 10,
-            "location" => "Serbia"
+            'capacity' => 10,
+            'location' => 'Serbia',
         ]);
         $response->assertOk();
         $updatedVenue = Venue::all()->find($venue->id);
@@ -51,7 +51,7 @@ class VenueApiTest extends TestCase
 
     public function test_delete_invalid_venue_return_400()
     {
-        $response = $this->delete("/api/venue/939393939393939393");
+        $response = $this->delete('/api/venue/939393939393939393');
         $response->assertBadRequest();
     }
 }
