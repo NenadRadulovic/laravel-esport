@@ -8,22 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-  use HasTimestamps, HasFactory;
+    use HasTimestamps, HasFactory;
 
-  protected $table = 'roles';
+    protected $table = 'roles';
 
-  const PLAYER = 'Player';
-  const Coach = 'Coach';
-  const Manager = 'Manager';
+    const PLAYER = 'Player';
+    const Coach = 'Coach';
+    const Manager = 'Manager';
 
-  const ROLES = [
-    self::PLAYER,
-    self::Coach,
-    self::Manager
-  ];
+    const ROLES = [
+      self::PLAYER,
+      self::Coach,
+      self::Manager,
+    ];
 
-  protected $fillable = [
-    'id',
-    'name'
-  ];
+    protected $fillable = [
+      'id',
+      'name',
+    ];
 }

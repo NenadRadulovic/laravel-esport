@@ -27,9 +27,11 @@ class VenueController extends Controller
             DB::beginTransaction();
             $venue = Venue::create($request->validated());
             DB::commit();
+
             return new VenueResource($venue);
         } catch (Exception $e) {
             DB::rollBack();
+
             return response($e->getMessage(), 400);
         }
     }
@@ -54,9 +56,11 @@ class VenueController extends Controller
             $venue->update($request->validated());
             $venue->save();
             DB::commit();
+
             return new VenueResource($venue);
         } catch (Exception $e) {
             DB::rollBack();
+
             return response($e->getMessage(), 400);
         }
     }
@@ -74,9 +78,11 @@ class VenueController extends Controller
             }
             $venue->delete();
             DB::commit();
+
             return response('Venue deleted', 200);
         } catch (Exception $e) {
             DB::rollBack();
+
             return response($e->getMessage(), 400);
         }
     }
