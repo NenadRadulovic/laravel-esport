@@ -12,7 +12,7 @@ class Organization extends Model
     use HasUuids, HasFactory, HasTimestamps;
 
     protected $fillable = [
-      "name",
+      'name',
       'description',
       'logo',
       'founded_date',
